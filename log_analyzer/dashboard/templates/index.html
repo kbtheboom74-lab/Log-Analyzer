@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Analyzer - Mini SIEM Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; }
+        .header { background: #1e293b; padding: 1rem 2rem; border-bottom: 2px solid #3b82f6; display: flex; justify-content: space-between; align-items: center; }
+        .header h1 { font-size: 1.5rem; color: #3b82f6; }
+        .header .status { color: #22c55e; font-size: 0.9rem; }
+        .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding: 1.5rem 2rem; }
+        .stat-card { background: #1e293b; border-radius: 8px; padding: 1.2rem; border-left: 4px solid #3b82f6; }
+        .stat-card.critical { border-left-color: #ef4444; }
+        .stat-card.warning { border-left-color: #f59e0b; }
+        .stat-card.success { border-left-color: #22c55e; }
+        .stat-card h3 { font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+        .stat-card .value { font-size: 2rem; font-weight: bold; margin-top: 0.3rem; }
+        .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 0 2rem; }
+        .chart-card { background: #1e293b; border-radius: 8px; padding: 1.2rem; }
+        .chart-card h3 { margin-bottom: 1rem; color: #94a3b8; font-size: 0.9rem; text-transform: uppercase; }
+        .tables-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.5rem 2rem; }
+        .table-card { background: #1e293b; border-radius: 8px; padding: 1.2rem; max-height: 400px; overflow-y: auto; }
+        .table-card h3 { margin-bottom: 1rem; color: #94a3b8; font-size: 0.9rem; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        th { text-align: left; padding: 0.5rem; color: #64748b; border-bottom: 1px solid #334155; }
+        td { padding: 0.5rem; border-bottom: 1px solid #1e293b; }
+        .severity-critical { color: #ef4444; font-weight: bold; }
+        .severity-high { color: #f59e0b; font-weight: bold; }
+        .severity-medium { color: #3b82f6; }
+        .severity-low { color: #22c55e; }
+        .severity-info { color: #94a3b8; }
+        .alert-row { background: #1c1917; border-left: 3px solid #ef4444; margin-bottom: 0.5rem; padding: 0.7rem; border-radius: 4px; }
+        .alert-row .alert-title { font-weight: bold; color: #fbbf24; }
+        .alert-row .alert-meta { font-size: 0.8rem; color: #94a3b8; margin-top: 0.3rem; }
+        .mitre-tag { background: #7c3aed; color: white; padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Log Analyzer / Mini SIEM</h1>
+        <div class="status" id="status">Loading...</div>
+    </div>
+
+    <div class="stats-row">
+        <div class="stat-card">
+            <h3>Total Events</h3>
+            <div class="value" id="total-events">-</div>
+        </div>
+        <div class="stat-card critical">
+            <h3>Critical / High</h3>
+            <div class="value" id="critical-count">-</div>
+        </div>
+        <div class="stat-card warning">
+            <h3>Active Alerts</h3>
+            <div class="value" id="alert-count">-</div>
+        </div>
+        <div class="stat-card success">
+            <h3>Log Sources</h3>
+            <div class="value" id="source-count">-</div>
+        </div>
+    </div>
+
+    <div class="charts-row">
+        <div class="chart-card">
+            <h3>Events by Type</h3>
+            <canvas id="actionsChart"></canvas>
+        </div>
+        <div class="chart-card">
+            <h3>Severity Distribution</h3>
+            <canvas id="severityChart"></canvas>
+        </div>
+    </div>
+
+    <div class="tables-row">
+        <div class="table-card">
+            <h3>Top Source IPs</h3>
+            <table>
+                <thead><tr><th>IP Address</th><th>Event Count</th></tr></thead>
+                <tbody id="top-ips"></tbody>
+            </table>
+        </div>
+        <div class="table-card">
+            <h3>Recent Alerts</h3>
+            <div id="alerts-feed"></div>
+        </div>
+    </div>
+
+    <div style="padding: 1.5rem 2rem;">
+        <div class="table-card" style="max-height: 500px;">
+            <h3>Recent Events</h3>
+            <table>
+                <thead><tr><th>Time</th><th>Source IP</th><th>Action</th><th>Severity</th><th>Source</th><th>User</th></tr></thead>
+                <tbody id="events-table"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const COLORS = {
+            critical: '#ef4444', high: '#f59e0b', medium: '#3b82f6',
+            low: '#22c55e', info: '#94a3b8'
+        };
+
+        let actionsChart, severityChart;
+
+        async function fetchJSON(url) {
+            const res = await fetch(url);
+            return res.json();
+        }
+
+        async function loadStats() {
+            const stats = await fetchJSON('/api/stats');
+
+            document.getElementById('total-events').textContent = stats.total_events.toLocaleString();
+
+            const critHigh = stats.severities
+                .filter(s => s.severity === 'critical' || s.severity === 'high')
+                .reduce((a, b) => a + b.count, 0);
+            document.getElementById('critical-count').textContent = critHigh.toLocaleString();
+
+            const sources = new Set(stats.actions.map(a => {
+                const parts = a.action.split('_');
+                return parts[0];
+            }));
+            document.getElementById('source-count').textContent = sources.size;
+
+            // Actions chart
+            const actionsData = stats.actions.slice(0, 8);
+            if (actionsChart) actionsChart.destroy();
+            actionsChart = new Chart(document.getElementById('actionsChart'), {
+                type: 'bar',
+                data: {
+                    labels: actionsData.map(a => a.action),
+                    datasets: [{
+                        data: actionsData.map(a => a.count),
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8', maxRotation: 45 }, grid: { display: false } },
+                        y: { ticks: { color: '#94a3b8' }, grid: { color: '#334155' } }
+                    }
+                }
+            });
+
+            // Severity chart
+            if (severityChart) severityChart.destroy();
+            severityChart = new Chart(document.getElementById('severityChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: stats.severities.map(s => s.severity.toUpperCase()),
+                    datasets: [{
+                        data: stats.severities.map(s => s.count),
+                        backgroundColor: stats.severities.map(s => COLORS[s.severity] || '#64748b')
+                    }]
+                },
+                options: {
+                    plugins: { legend: { position: 'right', labels: { color: '#e2e8f0' } } }
+                }
+            });
+
+            // Top IPs table
+            const ipsBody = document.getElementById('top-ips');
+            ipsBody.innerHTML = stats.top_ips.map(ip =>
+                `<tr><td>${ip.ip}</td><td>${ip.count}</td></tr>`
+            ).join('');
+        }
+
+        async function loadAlerts() {
+            const alerts = await fetchJSON('/api/alerts');
+            document.getElementById('alert-count').textContent = alerts.length;
+            const feed = document.getElementById('alerts-feed');
+            feed.innerHTML = alerts.reverse().slice(0, 20).map(a => `
+                <div class="alert-row">
+                    <div class="alert-title">
+                        <span class="severity-${a.severity}">[${a.severity.toUpperCase()}]</span>
+                        ${a.rule}
+                        ${a.mitre_id ? `<span class="mitre-tag">${a.mitre_id}</span>` : ''}
+                    </div>
+                    <div class="alert-meta">
+                        ${a.timestamp} | ${a.event_count} events
+                        ${a.source_ip ? '| IP: ' + a.source_ip : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function loadEvents() {
+            const events = await fetchJSON('/api/events?limit=50');
+            const tbody = document.getElementById('events-table');
+            tbody.innerHTML = events.map(e => `
+                <tr>
+                    <td>${e.timestamp}</td>
+                    <td>${e.source_ip || '-'}</td>
+                    <td>${e.action}</td>
+                    <td><span class="severity-${e.severity}">${e.severity}</span></td>
+                    <td>${e.log_source}</td>
+                    <td>${e.username || '-'}</td>
+                </tr>
+            `).join('');
+        }
+
+        async function refresh() {
+            try {
+                await Promise.all([loadStats(), loadAlerts(), loadEvents()]);
+                document.getElementById('status').textContent =
+                    'Live | Last updated: ' + new Date().toLocaleTimeString();
+            } catch (err) {
+                document.getElementById('status').textContent = 'Error: ' + err.message;
+                document.getElementById('status').style.color = '#ef4444';
+            }
+        }
+
+        refresh();
+        setInterval(refresh, 10000);
+    </script>
+</body>
+</html>

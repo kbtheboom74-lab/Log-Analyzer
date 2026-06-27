@@ -1,0 +1,16 @@
+log_analyzer:
+  database: events.db
+  rules_dir: rules
+  alert_log: alerts.json
+
+dashboard:
+  host: 127.0.0.1
+  port: 5000
+  debug: true
+
+ingestion:
+  supported_formats:
+    - auth
+    - syslog
+    - apache
+    - firewall

@@ -1,0 +1,200 @@
+Jun 27 17:27:06 webserver01 sshd[9860]: Accepted publickey for admin from 10.0.1.22 port 61452 ssh2
+Jun 27 17:27:14 webserver01 sshd[7119]: Accepted publickey for root from 10.0.1.15 port 47968 ssh2
+Jun 27 17:27:38 webserver01 sshd[4284]: Accepted publickey for deploy from 172.16.0.100 port 41002 ssh2
+Jun 27 17:27:09 webserver01 sshd[9970]: Failed password for invalid user user967 from 198.51.100.77 port 51373 ssh2
+Jun 27 17:28:58 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/chmod 777 /tmp/exploit.sh
+Jun 27 17:27:41 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 17:28:12 webserver01 sshd[3897]: Accepted publickey for root from 10.0.1.15 port 49808 ssh2
+Jun 27 17:28:51 webserver01 sshd[2106]: Failed password for invalid user user862 from 198.51.100.77 port 53104 ssh2
+Jun 27 17:28:58 webserver01 sshd[1123]: Failed password for www-data from 198.51.100.77 port 57293 ssh2
+Jun 27 17:29:57 webserver01 sshd[5441]: Failed password for admin from 198.51.100.77 port 62574 ssh2
+Jun 27 17:28:16 webserver01 sshd[4176]: Failed password for invalid user user232 from 198.51.100.77 port 59388 ssh2
+Jun 27 17:29:40 webserver01 sshd[6880]: Failed password for invalid user user182 from 198.51.100.77 port 45589 ssh2
+Jun 27 17:29:54 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 17:30:08 webserver01 sshd[2175]: Accepted publickey for deploy from 10.0.1.22 port 47976 ssh2
+Jun 27 17:33:38 webserver01 sshd[2380]: Accepted publickey for deploy from 10.0.1.22 port 61057 ssh2
+Jun 27 17:29:21 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 17:30:18 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 17:27:23 webserver01 sshd[8191]: Accepted publickey for admin from 10.0.1.15 port 47134 ssh2
+Jun 27 17:30:24 webserver01 sshd[4251]: Failed password for kthompson from 198.51.100.77 port 54731 ssh2
+Jun 27 17:27:44 webserver01 sshd[5481]: Accepted publickey for deploy from 172.16.0.100 port 43295 ssh2
+Jun 27 17:28:46 webserver01 sshd[4603]: Accepted publickey for admin from 10.0.1.22 port 46446 ssh2
+Jun 27 17:33:24 webserver01 sshd[7523]: Failed password for kthompson from 198.51.100.77 port 56693 ssh2
+Jun 27 17:35:10 webserver01 sshd[2890]: Accepted publickey for root from 10.0.1.15 port 50436 ssh2
+Jun 27 17:29:24 webserver01 sshd[7963]: Failed password for kthompson from 192.0.2.199 port 59679 ssh2
+Jun 27 17:29:30 webserver01 sshd[5002]: Failed password for invalid user user704 from 198.51.100.77 port 60122 ssh2
+Jun 27 17:34:11 webserver01 sshd[6699]: Failed password for backup from 203.0.113.42 port 62750 ssh2
+Jun 27 17:31:26 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 17:35:12 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 17:31:46 webserver01 sshd[4179]: Accepted publickey for admin from 10.0.1.22 port 63665 ssh2
+Jun 27 17:28:33 webserver01 sshd[8593]: Failed password for invalid user user215 from 192.0.2.199 port 50484 ssh2
+Jun 27 17:30:36 webserver01 sshd[2542]: Failed password for jsmith from 198.51.100.77 port 43713 ssh2
+Jun 27 17:27:37 webserver01 sshd[1411]: Failed password for admin from 192.0.2.199 port 53562 ssh2
+Jun 27 17:42:02 webserver01 sshd[6401]: Failed password for admin from 198.51.100.77 port 61317 ssh2
+Jun 27 17:41:57 webserver01 sshd[6892]: Failed password for root from 198.51.100.77 port 57959 ssh2
+Jun 27 17:33:20 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 17:38:46 webserver01 sshd[3607]: Failed password for jsmith from 198.51.100.77 port 60980 ssh2
+Jun 27 17:39:06 webserver01 sshd[4039]: Accepted publickey for admin from 10.0.1.15 port 43296 ssh2
+Jun 27 17:39:26 webserver01 sshd[6256]: Failed password for kthompson from 203.0.113.42 port 45532 ssh2
+Jun 27 17:32:48 webserver01 sshd[9168]: Accepted publickey for root from 10.0.1.15 port 42152 ssh2
+Jun 27 17:35:33 webserver01 sshd[7214]: Failed password for admin from 203.0.113.42 port 56740 ssh2
+Jun 27 17:47:06 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 17:39:24 webserver01 sshd[9437]: Failed password for root from 192.0.2.199 port 43210 ssh2
+Jun 27 17:34:48 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 17:48:36 webserver01 sshd[2284]: Failed password for kthompson from 203.0.113.42 port 41073 ssh2
+Jun 27 17:36:38 webserver01 sshd[5899]: Failed password for www-data from 203.0.113.42 port 50448 ssh2
+Jun 27 17:36:06 webserver01 sshd[1453]: Failed password for invalid user user176 from 192.0.2.199 port 57621 ssh2
+Jun 27 17:48:34 webserver01 sshd[3623]: Failed password for invalid user user371 from 203.0.113.42 port 62730 ssh2
+Jun 27 17:34:09 webserver01 sshd[3425]: Accepted publickey for root from 10.0.1.22 port 44725 ssh2
+Jun 27 17:38:18 webserver01 sshd[1978]: Accepted publickey for root from 10.0.2.5 port 62063 ssh2
+Jun 27 17:45:04 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/apt update
+Jun 27 17:39:36 webserver01 sshd[5426]: Failed password for invalid user user706 from 203.0.113.42 port 43136 ssh2
+Jun 27 17:29:39 webserver01 sshd[7959]: Accepted publickey for deploy from 10.0.1.22 port 60900 ssh2
+Jun 27 17:37:30 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 17:46:32 webserver01 sshd[1126]: Failed password for invalid user user799 from 192.0.2.199 port 47813 ssh2
+Jun 27 17:50:30 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/bin/chmod 777 /tmp/exploit.sh
+Jun 27 17:47:16 webserver01 sshd[8160]: Accepted publickey for deploy from 10.0.1.15 port 48445 ssh2
+Jun 27 17:31:46 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 17:46:06 webserver01 sshd[2870]: Accepted publickey for deploy from 10.0.2.5 port 45609 ssh2
+Jun 27 17:39:40 webserver01 sshd[2404]: Failed password for kthompson from 192.0.2.199 port 42692 ssh2
+Jun 27 17:34:58 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/bin/chmod 777 /tmp/exploit.sh
+Jun 27 17:30:06 webserver01 sshd[8465]: Failed password for invalid user user932 from 198.51.100.77 port 58161 ssh2
+Jun 27 17:28:07 webserver01 sshd[9763]: Failed password for kthompson from 192.0.2.199 port 63758 ssh2
+Jun 27 17:33:18 webserver01 sshd[3560]: Failed password for root from 198.51.100.77 port 49607 ssh2
+Jun 27 17:35:30 webserver01 sshd[1208]: Failed password for invalid user user697 from 203.0.113.42 port 57088 ssh2
+Jun 27 17:56:58 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 17:35:46 webserver01 sshd[4670]: Failed password for backup from 198.51.100.77 port 43003 ssh2
+Jun 27 17:59:00 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/apt update
+Jun 27 17:52:47 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 17:54:18 webserver01 sshd[1789]: Failed password for backup from 192.0.2.199 port 57026 ssh2
+Jun 27 17:52:24 webserver01 sshd[4056]: Failed password for kthompson from 198.51.100.77 port 46457 ssh2
+Jun 27 17:36:26 webserver01 sshd[6220]: Failed password for invalid user user951 from 203.0.113.42 port 43646 ssh2
+Jun 27 17:42:29 webserver01 sshd[4598]: Failed password for admin from 203.0.113.42 port 52974 ssh2
+Jun 27 17:52:18 webserver01 sshd[2164]: Accepted publickey for admin from 10.0.1.22 port 44408 ssh2
+Jun 27 17:39:16 webserver01 sshd[4986]: Failed password for invalid user user855 from 203.0.113.42 port 54625 ssh2
+Jun 27 17:28:20 webserver01 sshd[4243]: Failed password for deploy from 203.0.113.42 port 56186 ssh2
+Jun 27 17:43:21 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 18:03:50 webserver01 sshd[7124]: Failed password for invalid user user564 from 203.0.113.42 port 60496 ssh2
+Jun 27 17:30:57 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/bin/chmod 777 /tmp/exploit.sh
+Jun 27 17:34:54 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/apt update
+Jun 27 17:44:13 webserver01 sshd[8242]: Accepted publickey for root from 10.0.1.22 port 54637 ssh2
+Jun 27 17:48:26 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 17:40:36 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/apt update
+Jun 27 17:53:04 webserver01 sshd[4992]: Accepted publickey for admin from 10.0.1.15 port 51320 ssh2
+Jun 27 18:05:50 webserver01 sshd[7196]: Failed password for invalid user user552 from 192.0.2.199 port 50984 ssh2
+Jun 27 17:34:06 webserver01 sshd[4225]: Failed password for backup from 192.0.2.199 port 43778 ssh2
+Jun 27 17:55:26 webserver01 sshd[6446]: Failed password for invalid user user939 from 198.51.100.77 port 49940 ssh2
+Jun 27 17:48:36 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 18:04:48 webserver01 sshd[5838]: Failed password for jsmith from 198.51.100.77 port 47146 ssh2
+Jun 27 17:41:46 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/apt update
+Jun 27 18:02:42 webserver01 sshd[8423]: Accepted publickey for admin from 172.16.0.100 port 47899 ssh2
+Jun 27 17:40:36 webserver01 sshd[5098]: Failed password for jsmith from 198.51.100.77 port 55089 ssh2
+Jun 27 18:09:34 webserver01 sshd[2528]: Failed password for kthompson from 198.51.100.77 port 55009 ssh2
+Jun 27 18:11:34 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 17:41:03 webserver01 sshd[9930]: Accepted publickey for deploy from 10.0.1.22 port 64490 ssh2
+Jun 27 17:52:10 webserver01 sshd[7083]: Failed password for invalid user user505 from 198.51.100.77 port 41325 ssh2
+Jun 27 17:46:06 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 17:43:06 webserver01 sshd[9332]: Accepted publickey for admin from 10.0.1.22 port 58313 ssh2
+Jun 27 17:54:35 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 17:45:04 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 17:35:21 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 17:43:46 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 17:48:59 webserver01 sshd[5080]: Accepted publickey for root from 172.16.0.100 port 50351 ssh2
+Jun 27 17:47:30 webserver01 sshd[4276]: Accepted publickey for root from 10.0.2.5 port 61822 ssh2
+Jun 27 17:32:15 webserver01 sshd[2712]: Failed password for invalid user user109 from 198.51.100.77 port 50887 ssh2
+Jun 27 18:15:38 webserver01 sshd[3067]: Failed password for deploy from 192.0.2.199 port 58706 ssh2
+Jun 27 18:05:36 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 17:41:14 webserver01 sshd[3673]: Accepted publickey for admin from 172.16.0.100 port 57433 ssh2
+Jun 27 18:09:54 webserver01 sshd[8803]: Accepted publickey for deploy from 10.0.1.22 port 41575 ssh2
+Jun 27 17:48:42 webserver01 sshd[4275]: Failed password for jsmith from 192.0.2.199 port 55711 ssh2
+Jun 27 17:38:00 webserver01 sshd[6314]: Failed password for deploy from 192.0.2.199 port 62243 ssh2
+Jun 27 17:28:56 webserver01 sshd[1001]: Failed password for deploy from 198.51.100.77 port 59775 ssh2
+Jun 27 17:56:42 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 17:49:30 webserver01 sshd[8420]: Accepted publickey for deploy from 10.0.2.5 port 41142 ssh2
+Jun 27 17:36:31 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 18:20:18 webserver01 sshd[4227]: Accepted publickey for root from 172.16.0.100 port 54700 ssh2
+Jun 27 18:05:26 webserver01 sshd[1355]: Failed password for backup from 203.0.113.42 port 56854 ssh2
+Jun 27 17:52:14 webserver01 sshd[4619]: Accepted publickey for root from 10.0.2.5 port 62727 ssh2
+Jun 27 17:56:21 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 17:42:50 webserver01 sshd[2874]: Failed password for kthompson from 198.51.100.77 port 40152 ssh2
+Jun 27 18:26:36 webserver01 sshd[9802]: Failed password for kthompson from 198.51.100.77 port 64496 ssh2
+Jun 27 18:25:06 webserver01 sshd[4899]: Failed password for root from 198.51.100.77 port 56178 ssh2
+Jun 27 18:09:27 webserver01 sshd[4654]: Accepted publickey for deploy from 172.16.0.100 port 49756 ssh2
+Jun 27 18:07:46 webserver01 sshd[9422]: Failed password for kthompson from 203.0.113.42 port 60801 ssh2
+Jun 27 18:28:36 webserver01 sshd[8651]: Accepted publickey for deploy from 172.16.0.100 port 45781 ssh2
+Jun 27 18:16:42 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 18:15:01 webserver01 sshd[2572]: Failed password for deploy from 198.51.100.77 port 51622 ssh2
+Jun 27 17:52:18 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/bin/apt update
+Jun 27 17:50:23 webserver01 sshd[5387]: Accepted publickey for admin from 10.0.2.5 port 45876 ssh2
+Jun 27 18:20:26 webserver01 sshd[6285]: Accepted publickey for root from 172.16.0.100 port 59419 ssh2
+Jun 27 17:31:24 webserver01 sshd[1487]: Failed password for invalid user user182 from 192.0.2.199 port 53576 ssh2
+Jun 27 17:53:06 webserver01 sshd[4036]: Failed password for root from 203.0.113.42 port 41297 ssh2
+Jun 27 17:38:01 webserver01 sshd[2083]: Accepted publickey for admin from 172.16.0.100 port 44867 ssh2
+Jun 27 18:13:18 webserver01 sshd[4996]: Failed password for www-data from 192.0.2.199 port 49381 ssh2
+Jun 27 17:29:19 webserver01 sshd[3199]: Accepted publickey for deploy from 10.0.2.5 port 62023 ssh2
+Jun 27 17:47:12 webserver01 sshd[8359]: Failed password for invalid user user229 from 192.0.2.199 port 55050 ssh2
+Jun 27 18:21:06 webserver01 sshd[9653]: Failed password for deploy from 198.51.100.77 port 62650 ssh2
+Jun 27 18:16:58 webserver01 sshd[7305]: Failed password for admin from 203.0.113.42 port 50032 ssh2
+Jun 27 18:26:28 webserver01 sshd[2196]: Failed password for deploy from 203.0.113.42 port 62061 ssh2
+Jun 27 17:31:42 webserver01 sshd[4671]: Failed password for deploy from 203.0.113.42 port 48323 ssh2
+Jun 27 17:34:03 webserver01 sshd[8294]: Accepted publickey for admin from 10.0.1.15 port 48382 ssh2
+Jun 27 18:02:06 webserver01 sshd[7615]: Failed password for www-data from 203.0.113.42 port 44871 ssh2
+Jun 27 18:14:06 webserver01 sshd[9054]: Failed password for admin from 192.0.2.199 port 47223 ssh2
+Jun 27 18:31:00 webserver01 sshd[9921]: Accepted publickey for deploy from 10.0.1.22 port 60212 ssh2
+Jun 27 17:36:38 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 18:31:54 webserver01 sshd[9308]: Failed password for deploy from 192.0.2.199 port 50891 ssh2
+Jun 27 17:29:31 webserver01 sshd[9258]: Failed password for invalid user user896 from 192.0.2.199 port 48740 ssh2
+Jun 27 18:03:36 webserver01 sshd[9384]: Failed password for admin from 192.0.2.199 port 57008 ssh2
+Jun 27 17:29:33 webserver01 sshd[3113]: Failed password for jsmith from 192.0.2.199 port 57545 ssh2
+Jun 27 18:13:58 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 17:51:56 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 18:29:36 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 17:37:10 webserver01 sshd[6799]: Accepted publickey for admin from 10.0.1.22 port 40766 ssh2
+Jun 27 17:39:46 webserver01 sshd[9575]: Failed password for deploy from 198.51.100.77 port 41241 ssh2
+Jun 27 18:18:06 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/bin/apt update
+Jun 27 17:32:14 webserver01 sshd[6759]: Failed password for invalid user user756 from 198.51.100.77 port 47534 ssh2
+Jun 27 17:29:41 webserver01 sshd[2545]: Failed password for invalid user user852 from 198.51.100.77 port 56769 ssh2
+Jun 27 18:00:54 webserver01 sshd[2301]: Failed password for deploy from 198.51.100.77 port 46208 ssh2
+Jun 27 17:58:30 webserver01 sshd[8313]: Accepted publickey for deploy from 10.0.1.15 port 53388 ssh2
+Jun 27 18:17:08 webserver01 sshd[4364]: Failed password for jsmith from 203.0.113.42 port 41574 ssh2
+Jun 27 18:36:00 webserver01 sshd[7266]: Failed password for www-data from 203.0.113.42 port 61781 ssh2
+Jun 27 17:29:46 webserver01 sshd[6368]: Accepted publickey for admin from 10.0.2.5 port 64466 ssh2
+Jun 27 17:40:31 webserver01 sshd[6459]: Failed password for kthompson from 192.0.2.199 port 49486 ssh2
+Jun 27 18:48:06 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 17:59:42 webserver01 sshd[6730]: Failed password for kthompson from 203.0.113.42 port 53219 ssh2
+Jun 27 18:40:54 webserver01 sshd[5510]: Failed password for jsmith from 192.0.2.199 port 46447 ssh2
+Jun 27 18:11:06 webserver01 sshd[7252]: Failed password for backup from 192.0.2.199 port 50992 ssh2
+Jun 27 18:16:54 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 18:50:36 webserver01 sshd[7060]: Failed password for jsmith from 203.0.113.42 port 49240 ssh2
+Jun 27 18:39:54 webserver01 sshd[2194]: Failed password for invalid user user843 from 203.0.113.42 port 45688 ssh2
+Jun 27 18:45:58 webserver01 sshd[6150]: Accepted publickey for deploy from 10.0.1.15 port 60033 ssh2
+Jun 27 18:43:36 webserver01 sshd[5456]: Failed password for jsmith from 198.51.100.77 port 56813 ssh2
+Jun 27 18:12:42 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/sbin/useradd testuser
+Jun 27 18:15:50 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 18:10:21 webserver01 sshd[6005]: Failed password for admin from 203.0.113.42 port 57214 ssh2
+Jun 27 18:22:12 webserver01 sshd[6074]: Failed password for jsmith from 198.51.100.77 port 43613 ssh2
+Jun 27 18:42:56 webserver01 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 17:30:02 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/apt update
+Jun 27 17:59:33 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/bin/systemctl restart nginx
+Jun 27 18:17:32 webserver01 sshd[7314]: Accepted publickey for admin from 10.0.2.5 port 55779 ssh2
+Jun 27 17:53:57 webserver01 sshd[9415]: Failed password for deploy from 203.0.113.42 port 58632 ssh2
+Jun 27 17:30:06 webserver01 sshd[7224]: Accepted publickey for admin from 10.0.1.15 port 49866 ssh2
+Jun 27 18:06:19 webserver01 sshd[5390]: Failed password for kthompson from 203.0.113.42 port 42901 ssh2
+Jun 27 17:39:14 webserver01 sshd[7899]: Failed password for invalid user user492 from 198.51.100.77 port 57135 ssh2
+Jun 27 18:03:42 webserver01 sudo:   root : TTY=pts/0 ; PWD=/home/root ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 18:59:06 webserver01 sshd[5476]: Accepted publickey for admin from 10.0.1.15 port 53867 ssh2
+Jun 27 17:33:16 webserver01 sshd[1572]: Failed password for www-data from 192.0.2.199 port 49382 ssh2
+Jun 27 17:42:36 webserver01 sshd[5109]: Failed password for deploy from 192.0.2.199 port 53637 ssh2
+Jun 27 18:57:29 webserver01 sshd[3197]: Failed password for jsmith from 198.51.100.77 port 62507 ssh2
+Jun 27 17:52:10 webserver01 sshd[1522]: Accepted publickey for root from 10.0.1.22 port 46970 ssh2
+Jun 27 17:33:24 webserver01 sshd[4407]: Failed password for www-data from 198.51.100.77 port 42794 ssh2
+Jun 27 17:55:36 webserver01 sshd[4721]: Failed password for invalid user user343 from 203.0.113.42 port 43294 ssh2
+Jun 27 17:33:28 webserver01 sshd[3727]: Accepted publickey for admin from 10.0.1.15 port 49270 ssh2
+Jun 27 17:36:42 webserver01 sshd[5370]: Failed password for jsmith from 203.0.113.42 port 59244 ssh2
+Jun 27 18:02:29 webserver01 sshd[1708]: Failed password for backup from 203.0.113.42 port 56906 ssh2
+Jun 27 18:12:22 webserver01 sshd[2678]: Failed password for deploy from 192.0.2.199 port 57126 ssh2
+Jun 27 17:56:21 webserver01 sshd[1126]: Failed password for jsmith from 192.0.2.199 port 60274 ssh2
+Jun 27 17:53:14 webserver01 sshd[7616]: Accepted publickey for root from 10.0.1.22 port 53430 ssh2
+Jun 27 19:05:36 webserver01 sudo:   admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jun 27 18:43:00 webserver01 sshd[9017]: Accepted publickey for root from 172.16.0.100 port 54270 ssh2
+Jun 27 18:13:32 webserver01 sshd[7091]: Failed password for invalid user user486 from 203.0.113.42 port 62180 ssh2

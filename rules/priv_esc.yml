@@ -1,0 +1,11 @@
+name: Suspicious Privilege Escalation
+description: Multiple sudo commands executed in rapid succession
+severity: medium
+mitre_id: T1548
+conditions:
+  action: sudo_command
+threshold:
+  count: 10
+  window_seconds: 120
+  group_by: username
+response: alert

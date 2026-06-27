@@ -1,0 +1,7 @@
+name: Directory Traversal Attempt
+description: Path traversal pattern detected in HTTP request
+severity: high
+mitre_id: T1083
+conditions:
+  action: directory_traversal_attempt
+response: alert

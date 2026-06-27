@@ -1,0 +1,7 @@
+name: SQL Injection Attempt
+description: SQL injection pattern detected in HTTP request
+severity: critical
+mitre_id: T1190
+conditions:
+  action: sql_injection_attempt
+response: alert

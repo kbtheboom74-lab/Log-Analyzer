@@ -1,0 +1,11 @@
+name: Port Scan Detected
+description: Single IP connecting to many different destination ports in a short window
+severity: high
+mitre_id: T1046
+conditions:
+  action: firewall_block
+threshold:
+  count: 10
+  window_seconds: 60
+  group_by: source_ip
+response: alert

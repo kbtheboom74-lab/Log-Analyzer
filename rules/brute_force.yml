@@ -1,0 +1,12 @@
+name: SSH Brute Force
+description: Multiple failed SSH login attempts from the same IP within 5 minutes
+severity: high
+mitre_id: T1110
+conditions:
+  action: login_failed
+  protocol: ssh
+threshold:
+  count: 5
+  window_seconds: 300
+  group_by: source_ip
+response: alert
